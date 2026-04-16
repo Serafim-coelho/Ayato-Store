@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Ayato Store - Especialista em progressão para Genshin Impact, Honkai: Star Rail e Wuthering Waves. Exploração, desafios e builds com total transparência.">
+    <meta name="keywords" content="genshin impact, honkai star rail, wuthering waves, progressão, exploração, primo gems, stellar jade">
+    <meta property="image" src="src/images/ayato-icon.png">
+    <meta name="author" content="Ayato Store">
+    <meta property="og:title" content="Ayato Store - Especialista em Gacha Games">
+    <meta property="og:description" content="Progressão rápida e segura em Genshin Impact, Honkai: Star Rail e Wuthering Waves. Exploração, desafios e muito mais.">
+    <meta property="og:image" content="src/images/ayato-icon.png">
+    <meta property="og:url" content="#">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <title>Ayato Store - Gacha Games Specialist</title>
+    <link rel="icon" type="image/jpg" href="src/images/ayato-icon.png">
+    <link rel="canonical" href="#">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sao-blue': '#0e4b99',
+                        'sao-purple': '#6b46c1',
+                        'sao-dark': '#1a1a2e',
+                        'genshin-gold': '#4a28ea',
+                        'genshin-blue': '#3b82f6'
+                    },
+                    fontFamily: {
+                        'gaming': ['Orbitron', 'monospace'],
+                        'main': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-in-left': 'slide-in-left 0.8s ease-out',
+                        'slide-in-right': 'slide-in-right 0.8s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+
+<body class="bg-sao-dark text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-sao-dark/90 backdrop-blur-sm border-b border-sao-purple/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-gaming font-bold bg-gradient-to-r from-sao-blue to-genshin-gold bg-clip-text text-transparent">
+                        AYATO STORE
+                    </h1>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-genshin-gold transition-colors duration-300">Início</a>
+                    <a href="#services" class="hover:text-genshin-gold transition-colors duration-300">Serviços</a>
+                    <a href="#timeline" class="hover:text-genshin-gold transition-colors duration-300">Como Funciona</a>
+                    <a href="#testimonials" class="hover:text-genshin-gold transition-colors duration-300">Avaliações</a>
+                </div>
+
+                <button class="bg-gradient-to-r from-sao-blue to-sao-purple px-6 py-2 rounded-full hover:scale-105 transition-transform duration-300">
+                    <i class="fab fa-discord mr-2"></i>
+                    Contato
+                </button>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#home" class="block hover:text-genshin-gold">Início</a>
+                <a href="#services" class="block hover:text-genshin-gold">Serviços</a>
+                <a href="#timeline" class="block hover:text-genshin-gold">Como Funciona</a>
+                <a href="#testimonials" class="block hover:text-genshin-gold">Avaliações</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden">
+        <!-- Animated Background Gradient -->
+        <div class="absolute inset-0 morphing-bg opacity-10 z-0"></div>
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <!-- TROCAR IMAGEM -->>
+
+            <img src="src/images/ayato-wallpapper.png" alt="Ayato Background" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-sao-dark via-sao-dark/80 to-transparent"></div>
+        </div>
+
+        <!-- Floating Orbs -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-sao-blue/20 rounded-full blur-3xl float-slow"></div>
+        <div class="absolute bottom-20 right-20 w-40 h-40 bg-sao-purple/20 rounded-full blur-3xl float-medium"></div>
+        <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-genshin-gold/20 rounded-full blur-3xl float-fast"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center" style="z-index: 100;">
+            <div class="space-y-6" style="position: relative; z-index: 100;">
+                <h1 class="hero-title text-5xl lg:text-7xl font-gaming font-bold leading-tight" style="position: relative; z-index: 100;">
+                    <span class="block gradient-text-animated neon-text" style="position: relative; z-index: 100;">
+                        AYATO 
+                    </span>
+                    <span class="block text-white" style="position: relative; z-index: 100;">STORE</span>
+                </h1>
+
+                <p class="hero-description text-xl text-gray-300 leading-relaxed">
+                    Seus especialistas em progressão para jogos: <span class="text-genshin-gold font-semibold">Genshin Impact</span>,
+                    <span class="text-yellow-400 font-semibold">Honkai: Star Rail</span> e
+                    <span class="text-cyan-400 font-semibold">Wuthering Waves</span>. Exploração completa, desafios e avanço de conta com total transparência e segurança.
+                </p>
+
+                <div class="hero-buttons flex flex-col sm:flex-row gap-4">
+                    <a href="#services" class="bg-gradient-to-r from-sao-blue to-sao-purple px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg shimmer btn-ripple btn-gradient-hover glow-pulse icon-spin-hover text-center">
+                        <i class="fas fa-gamepad mr-2"></i>
+                        Ver Serviços
+                    </a>
+
+                    <button class="border-2 border-genshin-gold text-genshin-gold px-8 py-4 rounded-full font-semibold hover:bg-genshin-gold hover:text-sao-dark transition-all duration-300 shimmer btn-ripple scale-up-hover">
+                        <i class="fab fa-discord mr-2"></i>
+                        Falar com Atendente
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-image relative">
+                <div class="relative z-10 bounce-in">
+                    <img src="src/images/ayato-icon.png" alt="Ayato Avatar" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl animate-float glow-pulse">
+                </div>
+                <!-- Enhanced Decorative elements -->
+                <div class="absolute -top-4 -right-4 w-32 h-32 bg-sao-purple/30 rounded-full blur-2xl float-slow"></div>
+                <div class="absolute -bottom-4 -left-4 w-40 h-40 bg-genshin-gold/30 rounded-full blur-2xl float-medium">
+                </div>
+                <div class="absolute top-1/2 left-1/2 w-24 h-24 bg-sao-blue/20 rounded-full blur-2xl float-fast"></div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator with animation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce glow-pulse">
+            <i class="fas fa-chevron-down text-3xl text-genshin-gold"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-sao-dark to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-gaming font-bold mb-4">
+                    <span class="gradient-text-animated">
+                        SERVIÇOS DISPONÍVEIS
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto shimmer mb-2">
+                    Especializado em progressão rápida e eficiente
+                </p>
+                <p class="text-lg text-genshin-gold font-semibold">
+                    Genshin Impact • Honkai: Star Rail • Wuthering Waves
+                </p>
+            </div>
+            <!-- Aviso Importante sobre Screenshots -->
+            <div class="mt-8 mb-12 max-w-4xl mx-auto bg-gradient-to-r from-orange-600/20 to-red-600/20 border-2 border-orange-500/50 rounded-2xl p-6 backdrop-blur-sm">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle text-4xl text-orange-400"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold text-orange-400 mb-3">
+                            <i class="fas fa-camera mr-2"></i> IMPORTANTE: Traga seus prints!
+                        </h3>
+                        <p class="text-gray-200 text-lg leading-relaxed mb-3">
+                            Para agilizar o atendimento e tornar o processo mais direto, <strong class="text-white">traga screenshots da sua conta</strong> mostrando:
+                        </p>
+                        <ul class="space-y-2 text-gray-200">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <span>Estado atual de exploração das regiões</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <span>Personagens e níveis</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <span>Progresso atual no jogo</span>
+                            </li>
+                        </ul>
+                        <p class="text-yellow-300 mt-3 font-semibold">
+                            Isso torna o serviço muito mais rápido e eficiente para ambos!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== GENSHIN IMPACT ========== -->
+            <div class="mb-20">
+                <!-- Genshin Impact Header Card -->
+                <div class="game-header-card relative overflow-hidden rounded-3xl mb-8 group cursor-pointer hover:scale-[1.02] transition-transform duration-500">
+                    <div class="absolute inset-0">
+                        <img src="src/images/genshin-service-1.jpg" alt="Genshin Impact" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-sao-dark via-sao-dark/80 to-transparent">
+                        </div>
+                    </div>
+                    <div class="relative z-10 p-12">
+                        <h3 class="text-5xl font-gaming font-bold mb-4 text-genshin-gold neon-text">
+                            <i class="fas fa-wind mr-3"></i>GENSHIN IMPACT
+                        </h3>
+                        <p class="text-xl text-gray-200 max-w-2xl">
+                            Serviços completos de progressão no mundo de Teyvat. Exploração, desafios, end-games e builds otimizadas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Genshin Endgame Label -->
+                <div class="mb-6">
+                    <span class="inline-block bg-gradient-to-r from-genshin-gold/20 to-orange-500/20 border border-genshin-gold/50 text-genshin-gold font-gaming font-bold px-5 py-2 rounded-full text-sm tracking-widest uppercase">
+                        <i class="fas fa-crown mr-2"></i>Endgame
+                    </span>
+                </div>
+
+                <!-- Genshin Services Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Teatro Imaginário -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-sao-purple/20 hover:border-genshin-gold/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect reveal stagger-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl flex items-center justify-center mb-6 icon-spin-hover shimmer">
+                            <i class="fas fa-theater-masks text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-genshin-gold neon-text">Teatro Imaginário</h3>
+                        <p class="text-gray-300 text-sm mb-1 text-genshin-gold/70 font-semibold uppercase tracking-wide">Imaginarium Theater</p>
+                        <p class="text-gray-300 mb-6">
+                            Clearing completo do Teatro Imaginário, maximizando as recompensas de cada ciclo com os personagens da sua conta.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-sao-blue to-sao-purple py-3 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple btn-gradient-hover">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Confronto Abissal -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-sao-purple/20 hover:border-genshin-gold/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect reveal stagger-2">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-600 to-orange-500 rounded-xl flex items-center justify-center mb-6 icon-spin-hover shimmer">
+                            <i class="fas fa-skull-crossbones text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-genshin-gold neon-text">Confronto Abissal</h3>
+                        <p class="text-gray-300 text-sm mb-1 text-genshin-gold/70 font-semibold uppercase tracking-wide">Stygian Onslaught</p>
+                        <p class="text-gray-300 mb-6">
+                            Clearing do Confronto Abissal com pontuação máxima, garantindo todas as recompensas disponíveis do modo.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-sao-blue to-sao-purple py-3 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple btn-gradient-hover">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Abismo Espiral -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-sao-purple/20 hover:border-genshin-gold/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect reveal stagger-3">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 icon-spin-hover shimmer">
+                            <i class="fas fa-layer-group text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-genshin-gold neon-text">Abismo Espiral</h3>
+                        <p class="text-gray-300 text-sm mb-1 text-genshin-gold/70 font-semibold uppercase tracking-wide">Spiral Abyss</p>
+                        <p class="text-gray-300 mb-6">
+                            Clearing completo do Abismo Espiral com 36 estrelas para maximizar as recompensas de Primogems a cada ciclo.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-sao-blue to-sao-purple py-3 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple btn-gradient-hover">
+                            Contratar Serviço
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exploração Info Box -->
+                <div class="mt-12 space-y-6">
+                    <!-- Info header -->
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-map-marked-alt text-2xl text-genshin-gold"></i>
+                        <h4 class="text-xl font-gaming font-bold text-genshin-gold">Como funciona a Exploração</h4>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6">
+                        No jogo, a região pode marcar 100% mesmo sem todos os baús coletados — o que chamamos de 100% <em>"fake"</em>.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Exploração Normal -->
+                        <div class="bg-gray-800/50 border border-genshin-gold/30 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-map text-genshin-gold"></i>
+                                <h5 class="font-bold text-genshin-gold">🔹 Exploração Normal (100% do jogo)</h5>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">
+                                Se a região está em 50%, cobro 50% do valor. O objetivo é apenas atingir o 100% que o jogo mostra.
+                            </p>
+                            <div class="bg-gray-700/50 rounded-xl p-3 text-sm text-gray-400">
+                                <span class="text-white font-semibold">Exemplo:</span> Região completa = R$100 · Está em 50% → R$50
+                            </div>
+                        </div>
+
+                        <!-- Exploração Completa -->
+                        <div class="bg-gray-800/50 border border-orange-500/40 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-fire text-orange-400"></i>
+                                <h5 class="font-bold text-orange-400">🔥 Exploração Completa (110% / todos os baús)</h5>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">
+                                Independente do progresso atual, o valor é o da região completa. Passo por <strong class="text-white">todos os pontos do mapa</strong>: baús relevantes, desafios, quebra-cabeças e objetivos escondidos.
+                            </p>
+                            <ul class="text-sm text-gray-400 space-y-1">
+                                <li><i class="fas fa-check text-green-400 mr-1"></i> Todos os baús relevantes</li>
+                                <li><i class="fas fa-check text-green-400 mr-1"></i> Desafios e quebra-cabeças</li>
+                                <li><i class="fas fa-check text-green-400 mr-1"></i> Objetivos escondidos do mapa</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Margem de 5% -->
+                    <div class="bg-orange-900/20 border border-orange-500/30 rounded-2xl p-5 flex items-start gap-4">
+                        <i class="fas fa-exclamation-triangle text-orange-400 text-xl mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-bold text-orange-300 mb-1">⚠️ Sobre a margem de 5%</h5>
+                            <p class="text-gray-300 text-sm">
+                                Pode faltar até 5% dos baús totais — isso não significa que vou parar faltando 5%. Meu objetivo é pegar absolutamente tudo que for possível. Essa margem existe porque alguns baús podem depender de <strong class="text-white">RNG, eventos específicos ou condições ocultas</strong>                                difíceis de rastrear. A intenção sempre é entregar o mais próximo possível do 110% real.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== HONKAI: STAR RAIL ========== -->
+            <div class="mb-20">
+                <!-- Honkai Star Rail Header Card -->
+                <div class="game-header-card relative overflow-hidden rounded-3xl mb-12 group cursor-pointer hover:scale-[1.02] transition-transform duration-500">
+                    <div class="absolute inset-0">
+                        <img src="src/images/honkai-wallpaper.jpeg" alt="Honkai: Star Rail" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-sao-dark via-sao-dark/80 to-transparent">
+                        </div>
+                    </div>
+                    <div class="relative z-10 p-12">
+                        <h3 class="text-5xl font-gaming font-bold mb-4 text-purple-400 neon-text">
+                            <i class="fas fa-train mr-3"></i>HONKAI: STAR RAIL
+                        </h3>
+                        <p class="text-xl text-gray-200 max-w-2xl">
+                            Progressão completa pela Astral Express, exploração, Memory of Chaos e builds otimizadas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Star Rail Services Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Cuidados com sua conta -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-shield-alt text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Cuidados com sua Conta</h3>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Gerenciamento diário da conta: stamina, eventos, tarefas diárias e manutenção geral para manter tudo em dia.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Farm -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-coins text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Farm</h3>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Farm eficiente de materiais, relíquias e recursos para evoluir personagens e melhorar builds.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Pré-Farm -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-hourglass-half text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Pré-Farm (Longo Prazo)</h3>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Preparação antecipada de materiais para personagens futuros, garantindo estar pronto no lançamento.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Missões de Desbravamento -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-purple-600 to-violet-600 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-book-open text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Missões de Desbravamento</h3>
+                        <p class="text-gray-300 text-sm mb-1 text-purple-300/60 font-semibold text-xs uppercase tracking-wide">História</p>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Conclusão das questlines de desbravamento e história para desbloquear conteúdo e recompensas.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Missões Azuis & Roxas -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-tasks text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Missões Azuis & Roxas</h3>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Conclusão de missões secundárias e de companheiro (azuis e roxas) para recompensas extras e lore.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Exploração de Planeta -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-globe text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Exploração de Planeta</h3>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Exploração completa de planetas e áreas, coletando cofres, puzzles e marcos de teletransporte.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Eventos da Atualização -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-calendar-star text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Eventos da Atualização</h3>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Conclusão de todos os eventos do patch atual para garantir todas as recompensas e Stellar Jades.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Eventos Passados -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-gray-500 to-slate-600 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-history text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Eventos Passados</h3>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Conclusão de eventos de patches anteriores ainda disponíveis na conta, recuperando recompensas perdidas.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Endgames -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-sao-purple/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-14 h-14 bg-gradient-to-r from-red-500 to-orange-600 rounded-xl flex items-center justify-center mb-5 icon-spin-hover shimmer">
+                            <i class="fas fa-crown text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-purple-400 neon-text">Possíveis Endgames</h3>
+                        <p class="text-gray-300 text-sm mb-1 text-purple-300/60 font-semibold text-xs uppercase tracking-wide">Dependendo da conta</p>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Memory of Chaos, Pure Fiction, Apocalyptic Shadow e outros endgames disponíveis conforme o progresso da sua conta.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-2.5 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple text-sm">
+                            Contratar Serviço
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== WUTHERING WAVES ========== -->
+            <div class="mb-12">
+                <!-- Wuthering Waves -->
+                <div class="game-header-card relative overflow-hidden rounded-3xl mb-12 group cursor-pointer hover:scale-[1.02] transition-transform duration-500">
+                    <div class="absolute inset-0">
+                        <img src="src/images/WUWA-service.jpg" alt="Wuthering Waves" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-sao-dark via-sao-dark/80 to-transparent">
+                        </div>
+                    </div>
+                    <div class="relative z-10 p-12">
+                        <h3 class="text-5xl font-gaming font-bold mb-4 text-cyan-400 neon-text">
+                            <i class="fas fa-bolt mr-3"></i>WUTHERING WAVES
+                        </h3>
+                        <p class="text-xl text-gray-200 max-w-2xl">
+                            Progressão completa em história, exploração e farm de recursos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ZZZ Services Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Eventos Temporários -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-sao-purple/20 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 icon-spin-hover shimmer">
+                            <i class="fas fa-calendar-alt text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-cyan-400 neon-text">Eventos Temporários</h3>
+                        <p class="text-gray-300 mb-6">
+                            Conclusão de todos os eventos temporários do patch, garantindo todas as recompensas exclusivas por tempo limitado.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 py-3 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Farm & Conteúdo Avançado -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-sao-purple/20 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-6 icon-spin-hover shimmer">
+                            <i class="fas fa-bolt text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-cyan-400 neon-text">Farm & Conteúdo Avançado</h3>
+                        <p class="text-gray-300 mb-6">
+                            Farm de recursos, W-Engines, Bangboo e conteúdo avançado dos Hollows para evoluir seus Agents.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 py-3 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple">
+                            Contratar Serviço
+                        </button>
+                    </div>
+
+                    <!-- Serviços Personalizados -->
+                    <div class="service-card bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-sao-purple/20 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 tilt-effect">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 icon-spin-hover shimmer">
+                            <i class="fas fa-sliders-h text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-cyan-400 neon-text">Serviços Personalizados</h3>
+                        <p class="text-gray-300 mb-6">
+                            Serviço adaptado às suas necessidades específicas. Me conta o que precisa e montamos um plano sob medida.
+                        </p>
+                        <button class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 py-3 rounded-xl hover:scale-105 transition-transform duration-300 shimmer btn-ripple">
+                            Contratar Serviço
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-gradient-to-b from-gray-900 to-sao-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-gaming font-bold mb-4">
+                    <span class="gradient-text-animated">
+                        COMO FUNCIONA
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto shimmer">
+                    Processo transparente e seguro do início ao fim
+                </p>
+            </div>
+
+            <!-- Desktop Timeline -->
+            <div class="hidden lg:block relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-sao-blue via-sao-purple to-genshin-gold">
+                </div>
+
+                <!-- Timeline items -->
+                <div class="space-y-16">
+                    <!-- Step 1 -->
+                    <div class="relative flex items-center timeline-item">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-gray-800/50 p-6 rounded-2xl border border-sao-blue/30">
+                                <h3 class="text-xl font-bold text-sao-blue mb-2">1. Primeiro Contato</h3>
+                                <p class="text-gray-300">
+                                    Entre em contato via Discord. Conte-me sobre sua conta e o que você precisa.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-sao-blue rounded-full flex items-center justify-center z-10">
+                            <i class="fas fa-comment-dots text-white"></i>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative flex items-center timeline-item">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-sao-purple rounded-full flex items-center justify-center z-10">
+                            <i class="fas fa-file-contract text-white"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-gray-800/50 p-6 rounded-2xl border border-sao-purple/30">
+                                <h3 class="text-xl font-bold text-sao-purple mb-2">2. Orçamento & Acordo</h3>
+                                <p class="text-gray-300">
+                                    Analiso sua conta e forneço um orçamento detalhado. Definimos prazos e acordamos os termos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative flex items-center timeline-item">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-gray-800/50 p-6 rounded-2xl border border-green-500/30">
+                                <h3 class="text-xl font-bold text-green-400 mb-2">3. Segurança & Acesso</h3>
+                                <p class="text-gray-300">
+                                    Você altera temporariamente a senha da conta. <br>
+                                    Total segurança: sem acesso a email ou dados pessoais.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center z-10">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative flex items-center timeline-item">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-genshin-gold rounded-full flex items-center justify-center z-10">
+                            <i class="fas fa-gamepad text-white"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-gray-800/50 p-6 rounded-2xl border border-genshin-gold/30">
+                                <h3 class="text-xl font-bold text-genshin-gold mb-2">4. Execução do Serviço</h3>
+                                <p class="text-gray-300">
+                                    Realizo o serviço com updates diários do progresso. Você pode acompanhar tudo em tempo real.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="relative flex items-center timeline-item">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-gray-800/50 p-6 rounded-2xl border border-purple-500/30">
+                                <h3 class="text-xl font-bold text-purple-400 mb-2">5. Relatório Final</h3>
+                                <p class="text-gray-300">
+                                    Entrego um relatório detalhado de tudo que foi realizado, com screenshots e estatísticas.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center z-10">
+                            <i class="fas fa-chart-bar text-white"></i>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="relative flex items-center timeline-item">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center z-10">
+                            <i class="fas fa-handshake text-white"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-gray-800/50 p-6 rounded-2xl border border-pink-500/30">
+                                <h3 class="text-xl font-bold text-pink-400 mb-2">6. Entrega & Suporte</h3>
+                                <p class="text-gray-300">
+                                    Você altera a senha de volta. Ofereço suporte pós-serviço para qualquer dúvida ou problema.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Timeline -->
+            <div class="lg:hidden">
+                <div class="relative">
+                    <!-- Mobile timeline line -->
+                    <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sao-blue via-sao-purple to-genshin-gold">
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- Mobile Step 1 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute left-3 w-6 h-6 bg-sao-blue rounded-full flex items-center justify-center z-10">
+                                <i class="fas fa-comment-dots text-white text-xs"></i>
+                            </div>
+                            <div class="ml-16">
+                                <div class="bg-gray-800/50 p-4 rounded-xl border border-sao-blue/30">
+                                    <h3 class="text-lg font-bold text-sao-blue mb-2">1. Primeiro Contato</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        Entre em contato via Discord. Conte-me sobre sua conta e o que você precisa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Step 2 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute left-3 w-6 h-6 bg-sao-purple rounded-full flex items-center justify-center z-10">
+                                <i class="fas fa-file-contract text-white text-xs"></i>
+                            </div>
+                            <div class="ml-16">
+                                <div class="bg-gray-800/50 p-4 rounded-xl border border-sao-purple/30">
+                                    <h3 class="text-lg font-bold text-sao-purple mb-2">2. Orçamento & Acordo</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        Analiso sua conta e forneço um orçamento detalhado. Definimos prazos e acordamos os termos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Step 3 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute left-3 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center z-10">
+                                <i class="fas fa-shield-alt text-white text-xs"></i>
+                            </div>
+                            <div class="ml-16">
+                                <div class="bg-gray-800/50 p-4 rounded-xl border border-green-500/30">
+                                    <h3 class="text-lg font-bold text-green-400 mb-2">3. Segurança & Acesso</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        Você altera temporariamente a senha da conta. Total segurança: sem acesso a email ou dados pessoais.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Step 4 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute left-3 w-6 h-6 bg-genshin-gold rounded-full flex items-center justify-center z-10">
+                                <i class="fas fa-gamepad text-white text-xs"></i>
+                            </div>
+                            <div class="ml-16">
+                                <div class="bg-gray-800/50 p-4 rounded-xl border border-genshin-gold/30">
+                                    <h3 class="text-lg font-bold text-genshin-gold mb-2">4. Execução do Serviço</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        Realizo o serviço com updates diários do progresso. Você pode acompanhar tudo em tempo real.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Step 5 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute left-3 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center z-10">
+                                <i class="fas fa-chart-bar text-white text-xs"></i>
+                            </div>
+                            <div class="ml-16">
+                                <div class="bg-gray-800/50 p-4 rounded-xl border border-purple-500/30">
+                                    <h3 class="text-lg font-bold text-purple-400 mb-2">5. Relatório Final</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        Entrego um relatório detalhado de tudo que foi realizado, com screenshots e estatísticas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Step 6 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute left-3 w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center z-10">
+                                <i class="fas fa-handshake text-white text-xs"></i>
+                            </div>
+                            <div class="ml-16">
+                                <div class="bg-gray-800/50 p-4 rounded-xl border border-pink-500/30">
+                                    <h3 class="text-lg font-bold text-pink-400 mb-2">6. Entrega & Suporte</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        Você altera a senha de volta. Ofereço suporte pós-serviço para qualquer dúvida ou problema.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-16">
+                <button class="bg-gradient-to-r from-sao-blue to-genshin-gold px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300 shadow-lg">
+                    <i class="fab fa-discord mr-2"></i>
+                    Começar Agora
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gradient-to-b from-sao-dark to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-gaming font-bold mb-4">
+                    <span class="gradient-text-animated">
+                        O QUE DIZEM OS CLIENTES
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 shimmer">Avaliações reais de quem confia no meu trabalho</p>
+            </div>
+
+            <!-- Relatos Layout -->
+            <div class="flex flex-col lg:flex-row gap-6 items-stretch" id="relatos-grid">
+
+                <!-- Relato 1 — coluna lateral esquerda -->
+                <div class="lg:w-1/3 flex-shrink-0">
+                    <div class="testimonial-card relato-card rounded-2xl overflow-hidden border border-genshin-gold/20 hover:border-genshin-gold/50 transition-all duration-300 reveal stagger-1 h-full cursor-pointer" data-img="src/images/relato1.png">
+                        <img src="src/images/relato1.png" alt="Relato de cliente 1" class="w-full h-full object-cover object-top block pointer-events-none" loading="lazy">
+                        <div class="relato-overlay"><i class="fas fa-search-plus text-3xl text-white"></i></div>
+                    </div>
+                </div>
+
+                <!-- Relatos 2, 3, 4, 5 — grade 2x2 à direita -->
+                <div class="lg:w-2/3 flex flex-col gap-6">
+                    <!-- Linha 1: Relatos 2 + 3 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="testimonial-card relato-card rounded-2xl overflow-hidden border border-genshin-gold/20 hover:border-genshin-gold/50 transition-all duration-300 reveal stagger-2 cursor-pointer" data-img="src/images/relato2.png">
+                            <img src="src/images/relato2.png" alt="Relato de cliente 2" class="w-full h-auto block pointer-events-none" loading="lazy">
+                            <div class="relato-overlay"><i class="fas fa-search-plus text-3xl text-white"></i></div>
+                        </div>
+                        <div class="testimonial-card relato-card rounded-2xl overflow-hidden border border-genshin-gold/20 hover:border-genshin-gold/50 transition-all duration-300 reveal stagger-3 cursor-pointer" data-img="src/images/relato3.png">
+                            <img src="src/images/relato3.png" alt="Relato de cliente 3" class="w-full h-auto block pointer-events-none" loading="lazy">
+                            <div class="relato-overlay"><i class="fas fa-search-plus text-3xl text-white"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Linha 2: Relatos 4 + 5 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="testimonial-card relato-card rounded-2xl overflow-hidden border border-genshin-gold/20 hover:border-genshin-gold/50 transition-all duration-300 reveal stagger-4 cursor-pointer" data-img="src/images/relato4.png">
+                            <img src="src/images/relato4.png" alt="Relato de cliente 4" class="w-full h-auto block pointer-events-none" loading="lazy">
+                            <div class="relato-overlay"><i class="fas fa-search-plus text-3xl text-white"></i></div>
+                        </div>
+                        <div class="testimonial-card relato-card rounded-2xl overflow-hidden border border-genshin-gold/20 hover:border-genshin-gold/50 transition-all duration-300 reveal stagger-5 cursor-pointer" data-img="src/images/relato5.png">
+                            <img src="src/images/relato5.png" alt="Relato de cliente 5" class="w-full h-auto block pointer-events-none" loading="lazy">
+                            <div class="relato-overlay"><i class="fas fa-search-plus text-3xl text-white"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Visualizar relato">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Fechar">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="lightbox-backdrop" class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Relato de cliente ampliado">
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-sao-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-gaming font-bold mb-8">
+                <span class="gradient-text-animated neon-text">
+                    PRONTO PARA COMEÇAR?
+                </span>
+            </h2>
+
+            <p class="text-xl text-gray-300 mb-8">
+                Entre em contato e vamos discutir como posso ajudar a evoluir sua conta
+            </p>
+
+            <!-- Aviso sobre Screenshots -->
+            <div class="mb-8 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 border-2 border-yellow-500/50 rounded-2xl p-6 max-w-2xl mx-auto">
+                <div class="flex items-center justify-center gap-3 mb-3">
+                    <i class="fas fa-camera text-3xl text-yellow-400"></i>
+                    <h3 class="text-xl font-bold text-yellow-400">
+                        Lembre-se: Traga seus prints!
+                    </h3>
+                </div>
+                <p class="text-gray-200 text-center">
+                    Para um atendimento mais <strong>rápido e direto ao ponto</strong>, envie screenshots do estado atual da sua conta. Isso facilita o processo para ambos os lados!
+                </p>
+            </div>
+
+            <div class="bg-gray-800/50 p-8 rounded-2xl border border-genshin-gold/20">
+                <h3 class="text-2xl font-bold text-genshin-gold mb-4">Garantia de Qualidade</h3>
+                <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-300">
+                    <div>
+                        <i class="fas fa-shield-alt text-green-400 mb-2"></i>
+                        <p><strong>100% Seguro</strong><br>Sua conta sempre protegida</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-clock text-blue-400 mb-2"></i>
+                        <p><strong>Prazos Cumpridos</strong><br>Entrega sempre no prazo</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-medal text-yellow-400 mb-2"></i>
+                        <p><strong>Qualidade Premium</strong><br>Resultado garantido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sao-dark border-t border-sao-purple/20 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-4">
+                    <h3 class="text-2xl font-gaming font-bold bg-gradient-to-r from-sao-blue to-genshin-gold bg-clip-text text-transparent">
+                        AYATO STORE
+                    </h3>
+                    <p class="text-gray-400 text-sm">Especialista em Gacha Games</p>
+                </div>
+
+                <div class="mt-8 pt-8 border-t border-gray-800 text-gray-400 text-sm">
+                    <p>&copy; 2026 Ayato Store. Todos os direitos reservados.</p>
+                    <p class="mt-2">Genshin Impact, Honkai: Star Rail e Wuthering Waves são grandes jogos gacha.
+                    </p>
+                    <p class="mt-2">
+                        <a href="politicas.html" class="text-genshin-gold hover:text-blue-400 transition-colors duration-300">
+                            Políticas de Serviço
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+
+    <style>
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+            0%,
+            100% {
+                text-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        @keyframes slide-in-left {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-right {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+    </style>
+</body>
+
+</html>
