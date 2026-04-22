@@ -685,10 +685,10 @@
 @keyframes glow-pulse-effect {
     0%,
     100% {
-        filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+        filter: drop-shadow(0 0 5px rgba(11, 218, 245, 0.5));
     }
     50% {
-        filter: drop-shadow(0 0 20px rgba(245, 158, 11, 1)) drop-shadow(0 0 40px rgba(107, 70, 193, 0.5));
+        filter: drop-shadow(0 0 20px rgba(221, 0, 255, 0.8)) drop-shadow(0 0 40px rgba(107, 70, 193, 0.5));
     }
 }
 
